@@ -26,7 +26,7 @@
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
     "test": "npm run test-functional",
     "test-functional": "concurrently -r -k -s first \"npm run deploy-site\" \"testcafe nightmare ./js/functional-tests/modal.js\"",
-    "deploy-site": "http-server ./ -p 3000 -s\""
+    "deploy-site": "http-server ./ -p 3000 -s"
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
