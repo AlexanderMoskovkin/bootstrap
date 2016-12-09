@@ -16,23 +16,8 @@ install:
   - bundle install --deployment --jobs=3 --retry=3
   - cp grunt/npm-shrinkwrap.json ./
   - npm install
-after_success:
-  - if [ "$TWBS_TEST" = sauce-js-unit ]; then grunt/upload-preview.sh; fi
 cache:
   directories:
     - node_modules
     - vendor/bundle
     - "$HOME/google-cloud-sdk"
-env:
-  - TWBS_TEST=core
-  - TWBS_TEST=validate-html
-  - TWBS_TEST=sauce-js-unit
-matrix:
-  exclude:
-    - node_js: "4"
-      env: TWBS_TEST=validate-html
-    - node_js: "4"
-      env: TWBS_TEST=sauce-js-unit
-notifications:
-  webhooks:
-    - http://savage.twbsapps.com/savage/travis
