@@ -13,9 +13,10 @@ before_install:
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip sauce\]'; export TWBS_DO_SAUCE=$?; true
   - if [ "$TRAVIS_REPO_SLUG" = twbs-savage/bootstrap ]; then export TWBS_DO_VALIDATOR=0; fi
 install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - bundle install --deployment --jobs=3 --retry=3
   - cp grunt/npm-shrinkwrap.json ./
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - npm install
 cache:
   directories:
