@@ -21,3 +21,7 @@ cache:
     - node_modules
     - vendor/bundle
     - "$HOME/google-cloud-sdk"
+addons:
+  apt:
+    packages:
+      - xvfb
