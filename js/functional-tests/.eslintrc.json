@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": false,
+    "es6": true,
+    "jquery": false
+  },
+  
+  "globals": {
+    // TestCafe
+	"fixture": true,
+	"test": true
+  }
+}

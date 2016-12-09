@@ -24,7 +24,9 @@
     "postcss": "postcss --config grunt/postcss.js --replace dist/css/*.css",
     "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace docs/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace docs/examples/**/*.css",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "npm run eslint && npm run jscs && grunt test"
+    "test": "npm run eslint && npm run jscs && grunt test",
+    "test-functional": "concurrently -r -k -s first \"npm run deploy-site\" \"testcafe chrome ./js/functional-tests/modal.js\"",
+    "deploy-site": "http-server ./ -p 3000 -s\""
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
@@ -46,6 +48,7 @@
     "babel-eslint": "^7.0.0",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.0",
     "babel-preset-es2015": "^6.16.0",
+    "concurrently": "^3.1.0",
     "eslint": "^3.7.1",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
@@ -77,6 +80,7 @@
     "shelljs": "^0.7.4",
     "shx": "^0.1.4",
     "testcafe": "^0.11.1",
+    "testcafe-browser-provider-nightmare": "0.0.3",
     "time-grunt": "^1.4.0"
   },
   "engines": {
