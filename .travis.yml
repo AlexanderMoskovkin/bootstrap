@@ -14,7 +14,7 @@ before_install:
   - if [ "$TRAVIS_REPO_SLUG" = twbs-savage/bootstrap ]; then export TWBS_DO_VALIDATOR=0; fi
 install:
   - export DISPLAY=':99.0'
-  - Xvfb :99 -screen 52 1024x768x24 > /dev/null 2>&1 &
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - stty cols 80
   - bundle install --deployment --jobs=3 --retry=3
   - cp grunt/npm-shrinkwrap.json ./
