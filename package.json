@@ -24,7 +24,7 @@
     "postcss": "postcss --config grunt/postcss.js --replace dist/css/*.css",
     "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace docs/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace docs/examples/**/*.css",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "concurrently -r -k -s first \"http-server ./ -p 3000 -s\" \"testcafe firefox ./js/functional-tests/modal.js\"",
+    "test": "concurrently -r -k -s first \"http-server ./ -p 3000 -s\" \"testcafe 'chrome --no-sandbox --disable-gpu --no-first-run' ./js/functional-tests/modal.js\"",
     "test-functional": "concurrently -r -k -s first \"http-server ./ -p 3000 -s\" \"testcafe nightmare ./js/functional-tests/modal.js --hostname localhost\"",
     "deploy-site": "http-server ./ -p 3000 -s"
   },
@@ -81,6 +81,7 @@
     "shx": "^0.1.4",
     "testcafe": "^0.11.1",
     "testcafe-browser-provider-nightmare": "0.0.3",
+    "testcafe-browser-provider-saucelabs": "^1.1.0",
     "time-grunt": "^1.4.0"
   },
   "engines": {
