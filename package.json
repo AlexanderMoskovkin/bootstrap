@@ -17,20 +17,7 @@
     "Twitter, Inc."
   ],
   "scripts": {
-    "change-version": "node grunt/change-version.js",
-    "clean-css": "cleancss --skip-advanced --source-map --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --skip-advanced --source-map --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --skip-advanced --source-map --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
-    "clean-css-docs": "cleancss --skip-advanced --source-map --output docs/assets/css/docs.min.css docs/assets/css/docs.min.css",
-    "eslint": "eslint --ignore-path .eslintignore js",
-    "jscs": "jscs --config=js/.jscsrc js/src js/tests/unit/fixtures docs/assets/js/src grunt Gruntfile.js docs/assets/js/ie-emulation-modes-warning.js docs/assets/js/ie10-viewport-bug-workaround.js",
-    "htmlhint": "htmlhint --config docs/.htmlhintrc _gh_pages/",
-    "postcss": "postcss --config grunt/postcss.js --replace dist/css/*.css",
-    "postcss-docs": "postcss --config grunt/postcss.js --no-map --replace docs/assets/css/docs.min.css && postcss --config grunt/postcss.js --no-map --replace docs/examples/**/*.css",
-    "scss-lint": "bundle exec scss-lint --config scss/.scss-lint.yml --exclude scss/_normalize.scss scss/*.scss",
-    "scss-lint-docs": "bundle exec scss-lint --config scss/.scss-lint.yml --exclude docs/assets/scss/docs.scss docs/assets/scss/*.scss",
-    "uglify": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output dist/js/bootstrap.min.js dist/js/bootstrap.js",
-    "uglify-docs": "uglifyjs --compress warnings=false --mangle --comments '/^!/' --output docs/assets/js/docs.min.js docs/assets/js/vendor/*.js docs/assets/js/src/application.js",
-    "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "npm run eslint && npm run jscs && grunt test"
+    "test": "testcafe chrome,firefox js/tests/functional/*-test.js --app \"http-server ./ -p 3000\""
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
