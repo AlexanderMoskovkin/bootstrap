@@ -73,6 +73,7 @@
     "grunt-saucelabs": "^9.0.0",
     "grunt-stamp": "^0.3.0",
     "htmlhint": "^0.9.13",
+    "http-server": "^0.9.0",
     "is-travis": "^1.0.0",
     "jscs": "^3.0.7",
     "load-grunt-tasks": "^3.5.2",
@@ -80,6 +81,7 @@
     "postcss-flexbugs-fixes": "^2.0.0",
     "shelljs": "^0.7.4",
     "shx": "^0.1.4",
+    "testcafe": "^0.12.0-alpha2",
     "time-grunt": "^1.4.0",
     "uglify-js": "^2.7.5"
   },
