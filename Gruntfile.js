@@ -302,9 +302,10 @@ module.exports = function (grunt) {
       // Skip e2e tests if this is a Savage build
       process.env.TRAVIS_REPO_SLUG !== 'twbs-savage/bootstrap') {
       // Skip dist-css and dist-js if they were added by the core subset
-      if(testSubtasks.indexOf('dist-css') < 0)
-          testSubtasks = testSubtasks.concat(['dist-css', 'dist-js']);
-      testSubtasks = testSubtasks.concat(['testcafe'])
+    if (testSubtasks.indexOf('dist-css') < 0) {
+      testSubtasks = testSubtasks.concat(['dist-css', 'dist-js'])
+    }
+    testSubtasks = testSubtasks.concat(['testcafe'])
   }
   // Skip HTML validation if running a different subset of the test suite
   if (runSubset('validate-html') &&
