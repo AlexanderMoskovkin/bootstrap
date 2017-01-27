@@ -68,6 +68,6 @@ test('Modal page', async (t) => {
   // Close modal dialog
   await t
     .click(page.modalDialog.saveButton)
-    //.expect(page.modalDialog.isVisible()).notOk()
-    //.expect(page.popoverTitle.visible).notOk()
+    // .expect(page.modalDialog.isVisible()).notOk()
+    // .expect(page.popoverTitle.visible).notOk()
 })
