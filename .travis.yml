@@ -44,6 +44,7 @@ matrix:
       env: TWBS_TEST=validate-html
     - node_js: "4"
       env: TWBS_TEST=sauce-js-unit
+    - node_js: "4"
       env: TWBS_TEST=e2e
 notifications:
   slack: heybb:iz4wwosL0N0EdaX1gvgkU0NH
