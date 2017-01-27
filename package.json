@@ -71,6 +71,7 @@
     "grunt-jekyll": "^0.4.4",
     "grunt-saucelabs": "^9.0.0",
     "grunt-stamp": "^0.3.0",
+    "grunt-testcafe": "^0.12.1",
     "htmlhint": "^0.9.13",
     "htmllint-cli": "0.0.6",
     "http-server": "^0.9.0",
